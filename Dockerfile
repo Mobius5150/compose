@@ -1,7 +1,5 @@
-FROM alpine
+FROM wernight/docker-compose
 
-RUN apk add --no-cache curl docker
+RUN apk add --no-cache docker
 
-RUN curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose
-
-RUN chmod +x /usr/local/bin/docker-compose
+ENTRYPOINT ["/bin/sh", "-c"]
